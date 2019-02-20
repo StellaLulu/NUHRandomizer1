@@ -22,6 +22,42 @@ namespace NUHRandomizer {
         protected global::System.Web.UI.WebControls.Label lblNUH;
         
         /// <summary>
+        /// lblNUHHighS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNUHHighS;
+        
+        /// <summary>
+        /// lblNUHHighC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNUHHighC;
+        
+        /// <summary>
+        /// lblNUHLowS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNUHLowS;
+        
+        /// <summary>
+        /// lblNUHLowC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNUHLowC;
+        
+        /// <summary>
         /// lblCGH control.
         /// </summary>
         /// <remarks>
@@ -29,6 +65,42 @@ namespace NUHRandomizer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCGH;
+        
+        /// <summary>
+        /// lblCGHHighS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCGHHighS;
+        
+        /// <summary>
+        /// lblCGHHighC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCGHHighC;
+        
+        /// <summary>
+        /// lblCGHLowS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCGHLowS;
+        
+        /// <summary>
+        /// lblCGHLowC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCGHLowC;
         
         /// <summary>
         /// lblTTSH control.
@@ -40,6 +112,42 @@ namespace NUHRandomizer {
         protected global::System.Web.UI.WebControls.Label lblTTSH;
         
         /// <summary>
+        /// lblTTSHHighS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTTSHHighS;
+        
+        /// <summary>
+        /// lblTTSHHighC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTTSHHighC;
+        
+        /// <summary>
+        /// lblTTSHLowS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTTSHLowS;
+        
+        /// <summary>
+        /// lblTTSHLowC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTTSHLowC;
+        
+        /// <summary>
         /// lblSGH control.
         /// </summary>
         /// <remarks>
@@ -49,6 +157,42 @@ namespace NUHRandomizer {
         protected global::System.Web.UI.WebControls.Label lblSGH;
         
         /// <summary>
+        /// lblSGHHighS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSGHHighS;
+        
+        /// <summary>
+        /// lblSGHHighC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSGHHighC;
+        
+        /// <summary>
+        /// lblSGHLowS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSGHLowS;
+        
+        /// <summary>
+        /// lblSGHLowC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSGHLowC;
+        
+        /// <summary>
         /// lblTotal control.
         /// </summary>
         /// <remarks>
@@ -56,5 +200,41 @@ namespace NUHRandomizer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTotal;
+        
+        /// <summary>
+        /// lblTotalHighS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalHighS;
+        
+        /// <summary>
+        /// lblTotalHighC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalHighC;
+        
+        /// <summary>
+        /// lblTotalLowS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalLowS;
+        
+        /// <summary>
+        /// lblTotalLowC control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalLowC;
     }
 }

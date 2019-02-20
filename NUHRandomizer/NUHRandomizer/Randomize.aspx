@@ -10,13 +10,13 @@
     <form id="form1" runat="server">
         <div>
             <br />
-            <br />
-            <asp:Label ID="lblPatientID" runat="server" Text="Patient ID:"></asp:Label>
-            <asp:TextBox ID="txtPatientID" runat="server"></asp:TextBox>
-            <br />
-            <br />
         </div>
         <asp:Button ID="btnRandomize" runat="server" OnClick="ButtonRandomize_Click" Text="Randomize" />
+        <br />
+        <br />
+    &nbsp;<asp:Label ID="lalRemarks" runat="server" Text="Remarks"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtRemarks" runat="server" Height="112px" TextMode="MultiLine" Width="297px"></asp:TextBox>
     </form>
 </body>
 </html>

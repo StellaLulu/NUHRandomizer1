@@ -24,7 +24,7 @@ namespace NUHRandomizer.Account
         {
             ddlHospital.DataSource = ListHospital();
             ddlHospital.DataTextField = "HospitalName";
-            ddlHospital.DataValueField = "";
+            ddlHospital.DataValueField = "id";
             ddlHospital.DataBind();
 
         }
@@ -41,7 +41,7 @@ namespace NUHRandomizer.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = txtEmail.Text, Email = txtEmail.Text, EmployeeName = txtEmployeeName.Text,  };
+            var user = new ApplicationUser() { UserName = txtEmail.Text, Email = txtEmail.Text, EmployeeName = txtEmployeeName.Text, HospitalId = Convert.ToInt32(ddlHospital.SelectedValue) };
             IdentityResult result = manager.Create(user, txtPassword.Text);
             if (result.Succeeded)
             {

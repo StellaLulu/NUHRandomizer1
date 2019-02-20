@@ -24,10 +24,7 @@ namespace NUHRandomizer.Models
 
         public int RecruitStatusId { get; set; }
 
-        [Column(TypeName = "timestamp")]
-        [MaxLength(8)]
-        [Timestamp]
-        public byte[] RecruitDate { get; set; }
+        public DateTime RecruitDate { get; set; }
 
         public string Remarks { get; set; }
 

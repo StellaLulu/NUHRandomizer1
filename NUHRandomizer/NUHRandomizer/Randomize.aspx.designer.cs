@@ -22,22 +22,40 @@ namespace NUHRandomizer.Models {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblPatientID control.
+        /// lblHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPatientID;
+        protected global::System.Web.UI.WebControls.Label lblHospital;
         
         /// <summary>
-        /// txtPatientID control.
+        /// ddlHospital control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPatientID;
+        protected global::System.Web.UI.WebControls.DropDownList ddlHospital;
+        
+        /// <summary>
+        /// lblPatientId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPatientId;
+        
+        /// <summary>
+        /// txtPatientId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPatientId;
         
         /// <summary>
         /// btnRandomize control.

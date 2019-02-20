@@ -11,12 +11,20 @@
         <div>
             <br />
             <br />
-            <asp:Label ID="lblPatientID" runat="server" Text="Patient ID:"></asp:Label>
-            <asp:TextBox ID="txtPatientID" runat="server"></asp:TextBox>
+&nbsp;<asp:Label ID="lblHospital" runat="server" Text="Hospital:"></asp:Label>
+&nbsp;
+            <asp:DropDownList ID="ddlHospital" runat="server" AppendDataBoundItems="true">
+                <asp:ListItem Text="--Select Hospital--" Value="0" />
+            </asp:DropDownList>
             <br />
+            <asp:Label ID="lblPatientId" runat="server" Text="Patient ID:"></asp:Label>
+            <asp:TextBox ID="txtPatientId" runat="server" ReadOnly="True"></asp:TextBox>
             <br />
         </div>
         <asp:Button ID="btnRandomize" runat="server" OnClick="ButtonRandomize_Click" Text="Randomize" />
-    </form>
+        <br />
+        <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </form>
 </body>
 </html>

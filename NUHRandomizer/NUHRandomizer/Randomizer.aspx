@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Randomize.aspx.cs" Inherits="NUHRandomizer.Models.Randomize" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Randomizer.aspx.cs" Inherits="NUHRandomizer.Randomizer" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+    <div>
             <br />
             <br />
 &nbsp;<asp:Label ID="lblHospital" runat="server" Text="Hospital:"></asp:Label>
@@ -16,15 +9,21 @@
             <asp:DropDownList ID="ddlHospital" runat="server" AppendDataBoundItems="true">
                 <asp:ListItem Text="--Select Hospital--" Value="0" />
             </asp:DropDownList>
+             <asp:CompareValidator ControlToValidate="ddlHospital" ID="CompareValidator1"
+                                      CssClass="text-danger" ErrorMessage="Please select a Hospital"
+                                      runat="server" Display="Dynamic" 
+                                      Operator="NotEqual" ValueToCompare="0" Type="String" />
+            <br />
+            <br />
             <br />
             <asp:Label ID="lblPatientId" runat="server" Text="Patient ID:"></asp:Label>
             <asp:TextBox ID="txtPatientId" runat="server" ReadOnly="True"></asp:TextBox>
+            <br />
+            <br />
             <br />
         </div>
         <asp:Button ID="btnRandomize" runat="server" OnClick="ButtonRandomize_Click" Text="Randomize" />
         <br />
         <br />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </form>
-</body>
-</html>
+</asp:Content>

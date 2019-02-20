@@ -1,15 +1,15 @@
-﻿using System;
+﻿using NUHRandomizer.Models;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
-namespace NUHRandomizer.Models
+namespace NUHRandomizer
 {
-    public partial class Randomize : System.Web.UI.Page
+    public partial class Randomizer : System.Web.UI.Page
     {
         NUHRandomizerEntities context = new NUHRandomizerEntities();
         Random random = new Random();
@@ -27,10 +27,12 @@ namespace NUHRandomizer.Models
         int nextCount;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!User.Identity.IsAuthenticated)
+                Response.Redirect("~\\Account\\Login.aspx");
             lowHighNumber = random.Next(0, 10);
             stopContinueNumber = random.Next(0, 10);
             nextCount = context.Patients.Count() + 1;
-            txtPatientId.Text = "HALT" + nextCount.ToString("000");
+            txtPatientId.Text = "HALT-" + nextCount.ToString("000");
             if (!IsPostBack)
             {
                 List<Hospital> hospitals = context.Hospitals.ToList();
@@ -38,7 +40,7 @@ namespace NUHRandomizer.Models
                 ddlHospital.DataTextField = "HospitalShortName";
                 ddlHospital.DataValueField = "Id";
                 ddlHospital.DataBind();
-               
+
             }
         }
 
@@ -56,7 +58,7 @@ namespace NUHRandomizer.Models
             {
                 strata = 2;
             }
-            if(stopContinueNumber < 5)
+            if (stopContinueNumber < 5)
             {
                 ars = "s";
             }
@@ -68,7 +70,7 @@ namespace NUHRandomizer.Models
             count = context.Patients.Count() + 1;
             Patient patient = new Patient();
             patient.PatientId = count.ToString("000");
-            patient.TrialId = "HALT" + count.ToString("000");
+            patient.TrialId = "HALT-" + count.ToString("000");
             totalPatients = context.ResearchArms.Select(x => x.RecruitedCount).Sum();
             if (totalPatients <= 160)
             {
@@ -280,38 +282,34 @@ namespace NUHRandomizer.Models
                 patient.RecruitStatusId = 1;
                 patient.RecruitDate = DateTime.Now;
                 patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
-                try
+
+                context.Patients.Add(patient);
+                context.SaveChanges();
+                int id = patient.ResearchArmsId;
+                if (id == 1)
                 {
-                    context.Patients.Add(patient);
-                    context.SaveChanges();
-                    int id = patient.ResearchArmsId;
-                    if (id == 1)
-                    {
-                        MessageBox.Show("Patient have assigned to strata HIGH, random sequence C");
-                    }
-                    else if (id == 2)
-                    {
-                        MessageBox.Show("Patient have assigned to strata HIGH, random sequence S");
-                    }
-                    else if (id == 3)
-                    {
-                        MessageBox.Show("Patient have assigned to strata LOW random sequence C");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Patient have assigned to strata LOW random sequence S");
-                    }
-                }catch(DbUpdateException)
-                {
-                    MessageBox.Show("Please select Hospital");
+                    MessageBox.Show("Patient have assigned to strata HIGH, random sequence C");
                 }
+                else if (id == 2)
+                {
+                    MessageBox.Show("Patient have assigned to strata HIGH, random sequence S");
+                }
+                else if (id == 3)
+                {
+                    MessageBox.Show("Patient have assigned to strata LOW random sequence C");
+                }
+                else
+                {
+                    MessageBox.Show("Patient have assigned to strata LOW random sequence S");
+                }
+
             }
             else
             {
                 MessageBox.Show("Total patients quentity greater than 160");
             }
             nextCount = context.Patients.Count() + 1;
-            txtPatientId.Text = "HALT" + nextCount.ToString("000");
+            txtPatientId.Text = "HALT-" + nextCount.ToString("000");
             ddlHospital.SelectedIndex = 0;
         }
     }

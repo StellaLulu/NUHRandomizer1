@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using NUHRandomizer.Models;
 using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
+
 
 namespace NUHRandomizer.Account
 {
@@ -43,8 +45,14 @@ namespace NUHRandomizer.Account
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new ApplicationUser() { UserName = txtEmail.Text, Email = txtEmail.Text, EmployeeName = txtEmployeeName.Text, HospitalId = Convert.ToInt32(ddlHospital.SelectedValue) };
             IdentityResult result = manager.Create(user, txtPassword.Text);
+            string s = user.Id;
+
             if (result.Succeeded)
             {
+                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+                userManager.AddToRole(s, "Admin");
+                //userManager.AddToRole(s, "SuperUser");
+                //userManager.AddToRole(s, "Coordinator");
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);

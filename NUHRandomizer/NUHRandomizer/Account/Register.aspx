@@ -21,7 +21,7 @@
         <div class="form-group">
             <asp:Label runat="server" CssClass="col-md-2 control-label">Hospital</asp:Label>
             <div class="col-md-10">
-                <asp:DropDownList runat="server" ID="ddlHospital" CssClass="form-control" AppendDataBoundItems="true" >  
+                <asp:DropDownList runat="server" ID="ddlHospital" CssClass="form-control" AppendDataBoundItems="true" Width="500px" >  
                     <asp:ListItem Text="--Select Hospital--" Value="0" />
                 </asp:DropDownList>
                 <asp:CompareValidator ControlToValidate="ddlHospital" ID="CompareValidator1"

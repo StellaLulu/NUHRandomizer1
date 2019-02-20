@@ -44,10 +44,6 @@ namespace NUHRandomizer.Models
                 .WithRequired(e => e.Hospital)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Patient>()
-                .Property(e => e.RecruitDate)
-                .IsFixedLength();
-
             modelBuilder.Entity<RecruitmentStatu>()
                 .HasMany(e => e.Patients)
                 .WithRequired(e => e.RecruitmentStatu)

@@ -2259,6 +2259,7 @@ caption {
 }
 th {
   text-align: left;
+    margin-left: 120px;
 }
 .table {
   width: 100%;

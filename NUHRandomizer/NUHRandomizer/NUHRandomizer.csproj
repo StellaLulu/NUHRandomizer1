@@ -199,6 +199,7 @@
     <None Include="Properties\PublishProfiles\NUHRandomizer - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\NUHRandomizer - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Randomize.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -379,6 +380,13 @@
     <Compile Include="Models\RecruitmentStatu.cs" />
     <Compile Include="Models\ResearchArm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Randomize.aspx.cs">
+      <DependentUpon>Randomize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Randomize.aspx.designer.cs">
+      <DependentUpon>Randomize.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

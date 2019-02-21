@@ -80,7 +80,7 @@
     </div>
         <div class="col-lg-3 col-md-12"></div>
         <div class="col-lg-12 col-md-12">
-    <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="Subject Number"
+    <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="Id"
         AutoGenerateColumns="False" runat="server" CellSpacing="4" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField ItemStyle-Width="150px" DataField="TrialId" HeaderText="Trial ID">
@@ -88,17 +88,17 @@
             </asp:BoundField>
             <asp:TemplateField HeaderText="qHBsAg">
                 <ItemTemplate>
-                    <asp:Label ID="lblStrata" runat="server" Text='<%# Eval("ResearchArm.Strata") %>' Width="50px"></asp:Label>
+                    <asp:Label ID="lblStrata" runat="server" Text='<%# Eval("ResearchArm.Strata") %>' Width="150px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Treatment Arm">
                 <ItemTemplate>
-                    <asp:Label ID="lblARS" runat="server" Text='<%# Eval("ResearchArm.ARS") %>' Width="50px"></asp:Label>
+                    <asp:Label ID="lblARS" runat="server" Text='<%# Eval("ResearchArm.ARS") %>' Width="150px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Hospital">
                 <ItemTemplate>
-                    <asp:Label ID="lblHospitalShortName" runat="server" Text='<%# Eval("Hospital.HospitalShortName") %>' Width="50px"></asp:Label>
+                    <asp:Label ID="lblHospitalShortName" runat="server" Text='<%# Eval("Hospital.HospitalShortName") %>' Width="150px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

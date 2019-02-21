@@ -34,7 +34,7 @@
         </asp:TemplateField>
            <asp:TemplateField HeaderText="Institution">
             <ItemTemplate>
-                <asp:Label ID="lblHospital" runat="server" Text='<%# Eval("Hospital") %>' Width="100px" style="text-align: center"></asp:Label>
+                <asp:Label ID="lblHospital" runat="server" Text='<%# Eval("Hospital.HospitalShortName") %>' Width="100px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="qHBsAg">

@@ -50,7 +50,7 @@
     <form id="form" runat="server">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>HALT</b>Randomizer</a>
+            <a><b>HALT</b>Randomizer</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">

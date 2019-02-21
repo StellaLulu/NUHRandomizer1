@@ -66,11 +66,11 @@ namespace NUHRandomizer
             strata = ddlQhbsag.SelectedIndex;
             if (stopContinueNumber < 5)
             {
-                ars = "Halt";
+                ars = "s";
             }
             else
             {
-                ars = "Continue";
+                ars = "c";
             }
             List<Patient> patients = context.Patients.ToList();
             count = context.Patients.Count() + 1;
@@ -79,86 +79,137 @@ namespace NUHRandomizer
             patient.TrialId = "HALT-" + count.ToString("000");
             totalPatients = context.ResearchArms.Select(x => x.RecruitedCount).Sum();
 
-            if(strata == 1)
+            if (strata == 1)
             {
-                if(ars == "Continue")
+                if (ars == "c")
                 {
-                    if(highCCount >= 28)
-                    {
+                    if (highCCount >= 28)
+                    {                   
                         patient.ResearchArmsId = 2;
                         ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 2).First();
                         researchArm.RecruitedCount = highSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
                     }
                     else
                     {
                         patient.ResearchArmsId = 1;
                         ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 1).First();
                         researchArm.RecruitedCount = highCCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    if(highSCount >= 56)
+                    {
+                        patient.ResearchArmsId = 1;
+                        ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 1).First();
+                        researchArm.RecruitedCount = highSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        patient.ResearchArmsId = 2;
+                        ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 2).First();
+                        researchArm.RecruitedCount = highSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
                     }
                 }
             }
             else
             {
-                if (ars == "Continue")
+                if (ars == "c")
                 {
                     if (lowCCount >= 28)
                     {
                         patient.ResearchArmsId = 4;
                         ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 4).First();
                         researchArm.RecruitedCount = lowSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
                     }
                     else
                     {
                         patient.ResearchArmsId = 3;
                         ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 3).First();
                         researchArm.RecruitedCount = lowCCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    if(lowSCount >= 56)
+                    {
+                        patient.ResearchArmsId = 3;
+                        ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 3).First();
+                        researchArm.RecruitedCount = lowSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
+                    }
+                    else
+                    {
+                        patient.ResearchArmsId = 4;
+                        ResearchArm researchArm = context.ResearchArms.Where(x => x.Id == 4).First();
+                        researchArm.RecruitedCount = lowSCount + 1;
+                        patient.RecruitStatusId = 1;
+                        patient.RecruitDate = DateTime.Now;
+                        patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
+                        context.Patients.Add(patient);
+                        context.SaveChanges();
                     }
                 }
             }
-       
-
-                patient.RecruitStatusId = 1;
-                patient.RecruitDate = DateTime.Now;
-                patient.HospitalId = Int32.Parse(ddlHospital.SelectedValue);
-
-                context.Patients.Add(patient);
-                context.SaveChanges();
-                int id = patient.ResearchArmsId;
+            int id = patient.ResearchArmsId;
             if (id == 1)
             {
-                //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
-                //    "Strata : HIGH\nAssigned Random Sequence : C");
-                Label1.Text = "Subject NUmber : " + patient.TrialId +
+                Label1.Text = "Subject Number : " + patient.TrialId +
                     "<br/>Hospital: " + ddlHospital.SelectedItem +
                     "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Continue";
             }
             else if (id == 2)
             {
-                //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
-                //    "Strata : HIGH\nAssigned Random Sequence : S");
-                Label1.Text = "Subject NUmber : " + patient.TrialId +
+                Label1.Text = "Subject Number : " + patient.TrialId +
                     "<br/>Hospital: " + ddlHospital.SelectedItem +
                     "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Halt";
             }
             else if (id == 3)
             {
-                //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
-                //    "Strata : LOW\nAssigned Random Sequence : C");
-                Label1.Text = "Subject NUmber : " + patient.TrialId +
+                Label1.Text = "Subject Number : " + patient.TrialId +
                     "<br/>Hospital: " + ddlHospital.SelectedItem +
                       "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Continue";
             }
             else
             {
-                //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
-                //    "Strata : LOW\nAssigned Random Sequence : S");
-                Label1.Text = "Subject NUmber : " + patient.TrialId +
+                Label1.Text = "Subject Number : " + patient.TrialId +
                     "<br/>Hospital: " + ddlHospital.SelectedItem +
                    "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Halt";
             }
-
-
-            nextCount = context.Patients.Count() + 1;
             ddlHospital.SelectedIndex = 0;
             ddlQhbsag.SelectedIndex = 0;
             alertConfirm.Visible = true;

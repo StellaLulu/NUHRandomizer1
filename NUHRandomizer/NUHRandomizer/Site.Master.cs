@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using Microsoft.AspNet.Identity;
 
 namespace NUHRandomizer
@@ -69,7 +70,7 @@ namespace NUHRandomizer
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Cool");
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

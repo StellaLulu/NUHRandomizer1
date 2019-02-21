@@ -82,10 +82,17 @@
         </tr>
         <tr>
             <td class="auto-style6">
-            <asp:Label ID="lblPatientId" runat="server" Text="Patient ID:"></asp:Label>
+            <asp:Label ID="lblPatientId" runat="server" Text="qHBsAg (≥10IU/ml, &lt;10IU/ml) :"></asp:Label>
             </td>
             <td class="auto-style7">
-            <asp:TextBox ID="txtPatientId" runat="server" ReadOnly="True"></asp:TextBox>
+                <asp:DropDownList ID="ddlQhbsag" runat="server" AppendDataBoundItems="true">
+                    <asp:ListItem Text="--Select qHBsAg--" Value="0" />
+                </asp:DropDownList>
+                 <br />
+                <asp:CompareValidator ControlToValidate="ddlQhbsag" ID="CompareValidator2"
+                                      CssClass="text-danger" ErrorMessage="Please select a qHBsAg"
+                                      runat="server" Display="Dynamic" 
+                                      Operator="NotEqual" ValueToCompare="0" Type="String" />
             </td>
         </tr>
         <tr>

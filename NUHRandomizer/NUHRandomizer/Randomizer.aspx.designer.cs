@@ -67,13 +67,22 @@ namespace NUHRandomizer {
         protected global::System.Web.UI.WebControls.Label lblPatientId;
         
         /// <summary>
-        /// txtPatientId control.
+        /// ddlQhbsag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPatientId;
+        protected global::System.Web.UI.WebControls.DropDownList ddlQhbsag;
+        
+        /// <summary>
+        /// CompareValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
         
         /// <summary>
         /// btnRandomize control.

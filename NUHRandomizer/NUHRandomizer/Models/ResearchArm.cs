@@ -17,11 +17,11 @@ namespace NUHRandomizer.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(10)]
+        [StringLength(20)]
         public string Strata { get; set; }
 
         [Required]
-        [StringLength(1)]
+        [StringLength(10)]
         public string ARS { get; set; }
 
         public int OriginalCount { get; set; }

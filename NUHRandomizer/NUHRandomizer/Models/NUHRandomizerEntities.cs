@@ -8,7 +8,7 @@ namespace NUHRandomizer.Models
     public partial class NUHRandomizerEntities : DbContext
     {
         public NUHRandomizerEntities()
-            : base("name=NUHRandomizerEntities")
+            : base("name=NUHRandomizerEntities1")
         {
         }
 

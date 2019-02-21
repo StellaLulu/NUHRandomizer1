@@ -68,7 +68,7 @@
                     <ul class="nav navbar-nav">
                         <li id="randomizer" runat="server" visible="false"><a runat="server" href="~/Randomizer">Randomizer</a></li>
                         <li id="patientList" runat="server" visible="false"><a runat="server" href="~/ListPatient">Patient List</a></li>
-                        <li id="recruitmentStatus" runat="server" visible="false"><a runat="server" href="~/RecruitedPatientList">Recruitment Status</a></li>
+                        <li id="recruitmentStatus" runat="server" visible="false"><a runat="server" href="~/RecruitedPatientList">Patient Status</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li id="register" runat="server" visible="false"><a runat="server" href="~/Account/Register">Register</a></li>
                     </ul>

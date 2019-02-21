@@ -1,13 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RecruitedPatientList.aspx.cs" Inherits="NUHRandomizer.RecruitedPatientList" %>
+﻿<%@ Page Title="Randomized Patients" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RecruitedPatientList.aspx.cs" Inherits="NUHRandomizer.RecruitedPatientList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <%--Header--%>
     <section class="content-header">
-        <h1>Recruited Patient</h1>
+        <h1>Randomized Patients</h1>
     <%--Breadcrumb--%>
         <ol class="breadcrumb">
-            <li><i class="fa fa-dashboard"></i>Home</li>
-            <li class="active">Recruited Patient</li>
+            <li><a href="~/Default"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Randomized Patients</li>
         </ol>
     </section>
 
@@ -24,30 +24,35 @@
                             OnRowUpdating="OnRowUpdating" OnRowDataBound="OnRowDataBound" EmptyDataText="There is no patient in the list"
                             HorizontalAlign="Center">
                             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#001f3f" Font-Bold="True" ForeColor="White" />
+                            <HeaderStyle BackColor="#001f3f" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
                             <AlternatingRowStyle BackColor="#F8F8F8" />
        <Columns>
-        <asp:TemplateField HeaderText="Patient ID">
+        <asp:TemplateField HeaderText="Subject Number">
             <ItemTemplate>
                 <asp:Label ID="lblTrialId" runat="server" Text='<%# Eval("TrialId") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Strata">
+           <asp:TemplateField HeaderText="Institution">
+            <ItemTemplate>
+                <asp:Label ID="lblHospital" runat="server" Text='<%# Eval("Hospital") %>' Width="100px" style="text-align: center"></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="qHBsAg">
             <ItemTemplate>
                 <asp:Label ID="lblStrata" runat="server" Text='<%# Eval("ResearchArm.Strata") %>' Width="100px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Sequent">
+        <asp:TemplateField HeaderText="Treatment Arm">
             <ItemTemplate>
                 <asp:Label ID="lblARS" runat="server" Text='<%# Eval("ResearchArm.ARS") %>' Width="100px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Recruited Date">
+        <asp:TemplateField HeaderText="Randomized Date">
             <ItemTemplate>
                 <asp:Label ID="lblDate" runat="server" Text='<%# Eval("RecruitDate") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Recruitment Status">
+        <asp:TemplateField HeaderText="Patients Status">
             <ItemTemplate>
                 <asp:Label ID="lblStatus" runat="server" Text='<%# Bind("RecruitmentStatu.Status") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>
@@ -70,8 +75,8 @@
                    <asp:Button Text="Edit" runat="server" CommandName="Edit" ToolTip="Edit" CssClass="btn btn-warning"/>
                </ItemTemplate>
                <EditItemTemplate>
-                   <asp:Button Text="Save" runat="server" CommandName="Update" ToolTip="Update"/>
-                   <asp:Button Text="Cancel" runat="server" CommandName="Cancel" ToolTip="Cancel"/>
+                   <asp:Button Text="Save" runat="server" CommandName="Update" ToolTip="Update" CssClass="btn btn-success"/>
+                   <asp:Button Text="Cancel" runat="server" CommandName="Cancel" ToolTip="Cancel" CssClass="btn btn-danger"/>
                </EditItemTemplate>
            </asp:TemplateField>
         </Columns>

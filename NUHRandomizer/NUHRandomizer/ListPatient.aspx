@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListPatient.aspx.cs" Inherits="NUHRandomizer.ListPatient" %>
+﻿<%@ Page Title="PatientList" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListPatient.aspx.cs" Inherits="NUHRandomizer.ListPatient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
       table {
@@ -11,7 +11,7 @@
         <h1>Patient List</h1>
         <%--Breadcrumb--%>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="~/Default"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Patient List</li>
         </ol>
         <br />
@@ -36,18 +36,18 @@
     <div class="col-lg-6 col-md-12">
     <table style="width: 80%;" ID="tblddl" runat="server">
         <tr>
-            <td style="height: 30px">Research Arm</td>
+            <td style="height: 30px"><span>qHBsAg </span></td>
             <td style="height: 30px">
                 <asp:DropDownList ID="ddlResearchArm" runat="server" AutoPostBack="True" AppendDataBoundItems="true" CssClass="form-control">
-                    <asp:ListItem Text="--Select Research Arm--" Value="0"/>
+                    <asp:ListItem Text="--Select qHBsAg--" Value="0"/>
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td>ARS</td>
+            <td>Treatment Arm</td>
             <td style="height: 30px">
                 <asp:DropDownList ID="ddlARS" runat="server" AutoPostBack="True" AppendDataBoundItems="true" CssClass="form-control" >
-                    <asp:ListItem Text="--Select ARS--" Value="0" />
+                    <asp:ListItem Text="--Select Treatment Arm--" Value="0" />
                 </asp:DropDownList>
             </td>
         </tr>
@@ -79,20 +79,19 @@
     </table>
     </div>
         <div class="col-lg-3 col-md-12"></div>
-
-                            <div class="col-lg-12 col-md-12">
-    <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="PatientId"
+        <div class="col-lg-12 col-md-12">
+    <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="Subject Number"
         AutoGenerateColumns="False" runat="server" CellSpacing="4" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField ItemStyle-Width="150px" DataField="TrialId" HeaderText="Trial ID">
                 <ItemStyle Width="150px"></ItemStyle>
             </asp:BoundField>
-            <asp:TemplateField HeaderText="Strata">
+            <asp:TemplateField HeaderText="qHBsAg">
                 <ItemTemplate>
                     <asp:Label ID="lblStrata" runat="server" Text='<%# Eval("ResearchArm.Strata") %>' Width="50px"></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="ARS">
+            <asp:TemplateField HeaderText="Treatment Arm">
                 <ItemTemplate>
                     <asp:Label ID="lblARS" runat="server" Text='<%# Eval("ResearchArm.ARS") %>' Width="50px"></asp:Label>
                 </ItemTemplate>
@@ -103,6 +102,8 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <HeaderStyle HorizontalAlign="Left" />
+        <RowStyle HorizontalAlign="Left" />
     </asp:GridView>
         </div>
                     </div><!-- /.form group -->

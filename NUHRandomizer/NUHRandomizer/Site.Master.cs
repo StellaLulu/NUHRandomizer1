@@ -87,12 +87,11 @@ namespace NUHRandomizer
                 else if (Page.User.IsInRole("Coordinator"))
                 {
                     randomizer.Visible = true;
-                    recruitmentStatus.Visible = true;
                 }
             }
             else
             {
-
+                Response.Redirect("~\\Account\\Login.aspx");
             }
         }
 

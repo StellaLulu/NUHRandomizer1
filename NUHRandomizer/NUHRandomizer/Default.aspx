@@ -2,6 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
+          table {
+            margin: 0 auto; /* or margin: 0 auto 0 auto */
+          }
         .count {
             text-align: center;
             width: 60px

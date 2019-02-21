@@ -15,6 +15,16 @@ namespace NUHRandomizer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                if (Page.User.IsInRole("Coordinator"))
+                    Response.Redirect("~\\Randomizer.aspx");
+            }
+            else
+            {
+                Response.Redirect("~\\Account\\Login.aspx");
+            }
+
             if (!IsPostBack)
             {
                 //BindGdvPatient();

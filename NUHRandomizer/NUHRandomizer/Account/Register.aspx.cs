@@ -16,6 +16,21 @@ namespace NUHRandomizer.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                if (Page.User.IsInRole("User"))
+                    Response.Redirect("~\\Default.aspx");
+                if (Page.User.IsInRole("Coordinator"))
+                    Response.Redirect("~\\Randomizer.aspx");
+            }
+            else
+            {
+                Response.Redirect("~\\Account\\Login.aspx");
+            }
+
+               
+
+
             if (!IsPostBack)
             {
                 LoadHospital();
@@ -51,8 +66,8 @@ namespace NUHRandomizer.Account
             {
                 var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
                 //userManager.AddToRole(s, "Administrator");
-                //userManager.AddToRole(s, "User");
-                userManager.AddToRole(s, "Coordinator");
+                userManager.AddToRole(s, "User");
+                //userManager.AddToRole(s, "Coordinator");
                 // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                 //string code = manager.GenerateEmailConfirmationToken(user.Id);
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);

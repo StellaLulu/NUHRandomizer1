@@ -6,9 +6,32 @@
       }
     </style>
 
+       <%--Header--%>
+    <section class="content-header">
+        <h1>Patient List</h1>
+        <%--Breadcrumb--%>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Patient List</li>
+        </ol>
+        <br />
+        </section>
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+
     <div class="row">
-        <div class="col-lg-3 col-md-12">
-            <asp:Button ID="btnBack" runat="server" Text="Back" visible="false" OnClick="btnBack_Click"/>
+        <div class="col-lg-12 col-md-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                </div>
+                <div class="box-body">
+                    <!-- Date -->
+                    <div class="form-group">
+                                <div class="col-lg-3 col-md-12">
+            <asp:Button ID="btnBack" runat="server" Text="Back" visible="false" OnClick="btnBack_Click" CssClass="btn btn-default"/>
         </div>
     <div class="col-lg-6 col-md-12">
     <table style="width: 80%;" ID="tblddl" runat="server">
@@ -16,7 +39,7 @@
             <td style="height: 30px">Research Arm</td>
             <td style="height: 30px">
                 <asp:DropDownList ID="ddlResearchArm" runat="server" AutoPostBack="True" AppendDataBoundItems="true" CssClass="form-control">
-                    <asp:ListItem Text="--Select Research Arm--" Value="0" />
+                    <asp:ListItem Text="--Select Research Arm--" Value="0"/>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -36,7 +59,7 @@
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td><asp:Button ID="btnClear" runat="server" Text="Search" OnClick="btnClear_Click"/></td>
+            <td><asp:Button ID="btnClear" runat="server" Text="Search" OnClick="btnClear_Click" CssClass="btn btn-primary pull-right" /></td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -45,7 +68,7 @@
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="btnPrint" runat="server" Text="Print" OnClick="btnPrint_Click" />
+                <asp:Button ID="btnPrint" runat="server" Text="Print" OnClick="btnPrint_Click" CssClass="btn btn-warning pull-right" />
             </td>
         </tr>
         <tr>
@@ -56,9 +79,8 @@
     </table>
     </div>
         <div class="col-lg-3 col-md-12"></div>
-        </div>
-    <div class="row">
-    <div class="col-lg-12 col-md-12">
+
+                            <div class="col-lg-12 col-md-12">
     <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="PatientId"
         AutoGenerateColumns="False" runat="server" CellSpacing="4" HorizontalAlign="Center">
         <Columns>
@@ -83,5 +105,13 @@
         </Columns>
     </asp:GridView>
         </div>
-        </div>
+                    </div><!-- /.form group -->
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row-->
+
+
+
+
 </asp:Content>

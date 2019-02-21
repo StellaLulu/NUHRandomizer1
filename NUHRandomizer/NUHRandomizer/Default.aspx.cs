@@ -2,16 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using NUHRandomizer.Models;
 
 namespace NUHRandomizer
 {
-    public partial class _Default : Page
+    public partial class _Default : System.Web.UI.Page
     {
+        private static string uDept;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                if (Page.User.IsInRole("Coordinator"))
+                    Response.Redirect("~\\Randomizer.aspx");
+            }
+            else
+            {
+                Response.Redirect("~\\Account\\Login.aspx");
+            }
+
             lblNUH.Text = ListNUH().Count.ToString();
             lblNUHHighC.Text = ListNUHHighC().Count.ToString();
             lblNUHHighS.Text = ListNUHHighS().Count.ToString();

@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using NUHRandomizer.Models;
+
 
 namespace NUHRandomizer
 {
@@ -69,7 +69,31 @@ namespace NUHRandomizer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.User.Identity.IsAuthenticated)
+            {
+                if (Page.User.IsInRole("Administrator"))
+                {
+                    randomizer.Visible = true;
+                    patientList.Visible = true;
+                    recruitmentStatus.Visible = true;
+                    register.Visible = true;
+                }
+                else if (Page.User.IsInRole("User"))
+                {
+                    randomizer.Visible = true;
+                    patientList.Visible = true;
+                    recruitmentStatus.Visible = true;
+                }
+                else if (Page.User.IsInRole("Coordinator"))
+                {
+                    randomizer.Visible = true;
+                    recruitmentStatus.Visible = true;
+                }
+            }
+            else
+            {
 
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

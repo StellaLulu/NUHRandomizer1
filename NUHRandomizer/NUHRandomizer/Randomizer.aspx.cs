@@ -29,6 +29,7 @@ namespace NUHRandomizer
         {
             if (!User.Identity.IsAuthenticated)
                 Response.Redirect("~\\Account\\Login.aspx");
+
             lowHighNumber = random.Next(0, 10);
             stopContinueNumber = random.Next(0, 10);
             nextCount = context.Patients.Count() + 1;
@@ -288,29 +289,42 @@ namespace NUHRandomizer
                 int id = patient.ResearchArmsId;
                 if (id == 1)
                 {
-                    MessageBox.Show("Patient have assigned to strata HIGH, random sequence C");
+                    //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
+                    //    "Strata : HIGH\nAssigned Random Sequence : C");
+                    Label1.Text = "Patient : " + txtPatientId.Text  +
+                        "<br/>Strata : HIGH<br/>Assigned Random Sequence : C";
                 }
                 else if (id == 2)
                 {
-                    MessageBox.Show("Patient have assigned to strata HIGH, random sequence S");
+                    //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
+                    //    "Strata : HIGH\nAssigned Random Sequence : S");
+                    Label1.Text = "Patient : " + txtPatientId.Text  +
+                        "<br/>Strata : HIGH<br/>Assigned Random Sequence : S";
                 }
                 else if (id == 3)
                 {
-                    MessageBox.Show("Patient have assigned to strata LOW random sequence C");
+                    //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
+                    //    "Strata : LOW\nAssigned Random Sequence : C");
+                    Label1.Text = "Patient : " + txtPatientId.Text  +
+                          "<br/>Strata : LOW<br/>Assigned Random Sequence : C";
                 }
                 else
                 {
-                    MessageBox.Show("Patient have assigned to strata LOW random sequence S");
+                    //MessageBox.Show("Patient " + txtPatientId.Text + " has been assigned to\n" +
+                    //    "Strata : LOW\nAssigned Random Sequence : S");
+                    Label1.Text = "Patient : " + txtPatientId.Text  +
+                       "<br/>Strata : LOW<br/>Assigned Random Sequence : S";
                 }
-
             }
             else
             {
-                MessageBox.Show("Total patients quentity greater than 160");
+                //MessageBox.Show("Total patients quentity greater than 160");
+                Label2.Text = "Total patients quentity greater than 160";
             }
             nextCount = context.Patients.Count() + 1;
             txtPatientId.Text = "HALT-" + nextCount.ToString("000");
             ddlHospital.SelectedIndex = 0;
+            alertConfirm.Visible = true;
         }
     }
 }

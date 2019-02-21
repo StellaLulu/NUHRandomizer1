@@ -15,16 +15,13 @@ namespace NUHRandomizer
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!User.Identity.IsAuthenticated)
+            if (!Page.User.Identity.IsAuthenticated)
                 Response.Redirect("~\\Account\\Login.aspx");
-            else
-            {
-                if (!IsPostBack)
+            
+            if (!IsPostBack)
                 {
                     PopulatePatient();
                 }
-            }
-
         }
 
         private void PopulatePatient()

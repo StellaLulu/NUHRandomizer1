@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Randomizer.aspx.cs" Inherits="NUHRandomizer.Randomizer" %>
+﻿<%@ Page Title="Randomizer" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Randomizer.aspx.cs" Inherits="NUHRandomizer.Randomizer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
       table {
@@ -39,7 +39,7 @@
         <h1>Randomizer</h1>
         <%--Breadcrumb--%>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="~/Default"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Randomizer</li>
         </ol>
         <br />

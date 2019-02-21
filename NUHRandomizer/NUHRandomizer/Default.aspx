@@ -24,120 +24,137 @@
             margin-top: 1em;
         }
     </style>
-    <table>
-        <tr class="space"> 
-            <td class="header">
-                Institution
-            </td>
-            <td class="count header" style="width: 150px">
-                Patient Recruited
-            </td>
-            <td class="count header">High S</td>
-            <td class="count header">High C</td>
-            <td class="count header">Low S</td>
-            <td class="count header">Low C</td>
-        </tr>
-        <tr class="space">
-            <td class="header">
-                NUH
-            </td>
-            <td class="count">
-                <asp:Label id="lblNUH" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblNUHHighS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblNUHHighC" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblNUHLowS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblNUHLowC" runat="server" text=""></asp:Label>
-            </td>
-        </tr>
-        <tr class="space">
-            <td class="header">
-                CGH
-            </td>
-            <td class="count">
-                <asp:Label id="lblCGH" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblCGHHighS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblCGHHighC" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblCGHLowS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblCGHLowC" runat="server" text=""></asp:Label>
-            </td>
-        </tr>
-        <tr class="space">
-            <td class="header">
-                TTSH
-            </td>
-            <td class="count">
-                <asp:Label id="lblTTSH" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTTSHHighS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTTSHHighC" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTTSHLowS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTTSHLowC" runat="server" text=""></asp:Label>
-            </td>
-        </tr>
-        <tr class="spaceUnder">
-            <td class="header">
-                SGH
-            </td>
-            <td class="count">
-                <asp:Label id="lblSGH" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblSGHHighS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblSGHHighC" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblSGHLowS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblSGHLowC" runat="server" text=""></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td class="header">
-                Total
-            </td>
-            <td class="count">
-                <asp:Label id="lblTotal" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTotalHighS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTotalHighC" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTotalLowS" runat="server" text=""></asp:Label>
-            </td>
-            <td class="count">
-                <asp:Label id="lblTotalLowC" runat="server" text=""></asp:Label>
-            </td>
-        </tr>
-    </table>
+
+    <section class="content-header">
+        <h1>Home</h1>
+        <%--Breadcrumb--%>
+        <ol class="breadcrumb">
+            <li><a href="~/Default"><i class="fa fa-dashboard"></i> Home</a></li>
+        </ol>
+        <br />
+        </section>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="box box-info">
+                <div class="box-header">
+                    <h3 class="box-title">Dashboard</h3>
+                </div>
+                <div class="box-body">
+                    <table>
+                        <tr class="space" style="background-color: #001f3f">
+                            <td class="header">
+                                <font color="white">Institution</font>
+                            </td>
+                            <td class="count header" style="width: 150px">
+                                <font color="white">Patient Randomized</font>
+                            </td>
+                            <td class="count header" style="width: 150px"><font color="white">High (≥10IU/ml)<br />Halt</font></td>
+                            <td class="count header" style="width: 150px"><font color="white">High (≥10IU/ml)<br />Continue</font></td>
+                            <td class="count header" style="width: 150px"><font color="white">Low (<10IU/ml)<br />Halt</font></td>
+                            <td class="count header" style="width: 150px"><font color="white">Low (<10IU/ml)<br />Continue</font></td>
+                        </tr>
+                        <tr class="space">
+                            <td class="header">NUH
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblNUH" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblNUHHighS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblNUHHighC" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblNUHLowS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblNUHLowC" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr class="space">
+                            <td class="header">CGH
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblCGH" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblCGHHighS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblCGHHighC" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblCGHLowS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblCGHLowC" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr class="space">
+                            <td class="header">TTSH
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTTSH" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTTSHHighS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTTSHHighC" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTTSHLowS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTTSHLowC" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr class="spaceUnder">
+                            <td class="header">SGH
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblSGH" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblSGHHighS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblSGHHighC" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblSGHLowS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblSGHLowC" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="header">Total
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTotal" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTotalHighS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTotalHighC" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTotalLowS" runat="server" Text=""></asp:Label>
+                            </td>
+                            <td class="count">
+                                <asp:Label ID="lblTotalLowC" runat="server" Text=""></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div><!-- /.col -->
+    </div><!-- /.row-->
+
 
     
 

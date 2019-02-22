@@ -11,10 +11,6 @@
         .auto-style2 {
             width: 299px;
         }
-        .auto-style3 {
-            height: 40px;
-            width: 375px;
-        }
         .auto-style4 {
             width: 375px;
         }
@@ -28,18 +24,14 @@
             width: 299px;
             height: 22px;
         }
-        .auto-style8 {
-            width: 375px;
-            height: 22px;
-        }
-    </style>
+        </style>
 
      <%--Header--%>
     <section class="content-header">
         <h1>Randomizer</h1>
         <%--Breadcrumb--%>
         <ol class="breadcrumb">
-            <li><a href="~/Default"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="../Default.aspx"><i class="fa fa-dashboard"></i> Home</a></li>
             <li class="active">Randomizer</li>
         </ol>
         <br />
@@ -57,6 +49,12 @@
             </div>
             <div class="box-body">
                 <div class="form-group">
+
+                    <div class="alert alert-danger alert-dismissible" id="alertExcess" runat="server" visible="false">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-times"></i>There are 84 patients in this group</h4>
+                        <asp:Label ID="Label3" runat="server" Text="Please check with PI"></asp:Label>
+                    </div>
 
             <div class="alert alert-success alert-dismissible" id="alertConfirm" runat="server" visible="false">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

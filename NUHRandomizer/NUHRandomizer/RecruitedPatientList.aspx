@@ -49,7 +49,7 @@
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Date and Time">
             <ItemTemplate>
-                <asp:Label ID="lblDate" runat="server" Text='<%# Eval("RecruitDate") %>' Width="150px" style="text-align: center"></asp:Label>
+                <asp:Label ID="lblDate" runat="server" Text='<%# Eval("RecruitDate","{0:dd/MM/yyyy HH:mm}") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
         <asp:TemplateField HeaderText="Patients Status">

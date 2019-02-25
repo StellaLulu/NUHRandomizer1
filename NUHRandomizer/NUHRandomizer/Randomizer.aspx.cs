@@ -74,44 +74,60 @@ namespace NUHRandomizer
             count = context.Patients.Count() + 1;
             Patient patient = new Patient();
             patient.PatientId = count.ToString("000");
-            patient.TrialId = "HALT-" + count.ToString("000");
+            //patient.TrialId = "HALT-" + count.ToString("000");
 
 
 
-            //List<string> lowSequence = new List<string> { "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Continue", "Halt", "Halt", "Continue",
-            //    "Halt", "Halt", "Continue", "Halt", "Continue",
-            //    "Continue", "Halt", "Halt", "Halt", "Halt", "Continue",
-            //    "Continue", "Halt", "Halt", "Halt", "Halt", "Continue",
-            //    "Halt", "Continue", "Halt", "Halt", "Halt", "Continue",
-            //    "Halt", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue",
-            //    "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt",
-            //    "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Continue",
-            //    "Halt", "Continue", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt" };
+            List<string> lowSequence = new List<string> { "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Continue", "Halt", "Halt", "Continue",
+                "Halt", "Halt", "Continue", "Halt", "Continue",
+                "Continue", "Halt", "Halt", "Halt", "Halt", "Continue",
+                "Continue", "Halt", "Halt", "Halt", "Halt", "Continue",
+                "Halt", "Continue", "Halt", "Halt", "Halt", "Continue",
+                "Halt", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue",
+                "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt",
+                "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Continue",
+                "Halt", "Continue", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt" };
 
 
-            //List<string> highSequence = new List<string> { "Halt", "Halt", "Halt", "Halt", "Continue",
-            //    "Continue", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue",
-            //    "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt",
-            //    "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue",
-            //    "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt",
-            //    "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt",
-            //    "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Halt",
-            //    "Halt", "Continue" };
+            List<string> highSequence = new List<string> { "Halt", "Halt", "Halt", "Halt", "Continue",
+                "Continue", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue",
+                "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt",
+                "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt", "Continue",
+                "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt",
+                "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt",
+                "Halt", "Halt", "Continue", "Continue", "Halt", "Halt", "Halt", "Halt", "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Halt", "Halt",
+                "Halt", "Continue" };
 
 
-            List<string> testHighSequence = new List<string> { "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt" };
-            List<string> testLowSequence = new List<string> { "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue" };
+            //List<string> testHighSequence = new List<string> { "Continue", "Continue", "Continue", "Continue", "Halt",
+            //    "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue",
+            //    "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Continue",
+            //    "Halt", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue",
+            //    "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt",
+            //    "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue",
+            //    "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue",
+            //    "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt" };
+
+            //List<string> testLowSequence = new List<string> { "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue",
+            //    "Continue", "Halt", "Continue", "Continue", "Halt", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue",
+            //    "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue",
+            //    "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Halt", "Continue",
+            //    "Continue", "Halt", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue",
+            //    "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Continue", "Continue", "Continue", "Halt",
+            //    "Halt", "Continue", "Halt", "Continue", "Continue", "Continue", "Halt", "Continue", "Halt", "Continue", "Halt", "Continue", "Continue",
+            //    "Continue", "Continue", "Halt", "Halt", "Continue", "Continue", "Continue" };
 
             if (strata == 1)
             {
                 if (highCount < 84)
                 {
-                    ars = testHighSequence[highCount];
+                    patient.TrialId = "HALT-2" + (highCount + 1).ToString("000");
+                    ars = highSequence[highCount];
                     if (ars.Equals("Continue"))
                     {
                         patient.ResearchArmsId = 1;
@@ -142,25 +158,29 @@ namespace NUHRandomizer
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Continue";
+                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Continue"
+                            + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else if (id == 2)
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Halt";
+                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Halt"
+                            + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else if (id == 3)
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                              "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Continue";
+                              "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Continue"
+                              + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                           "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Halt";
+                           "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Halt"
+                           + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     ddlHospital.SelectedIndex = 0;
                     ddlQhbsag.SelectedIndex = 0;
@@ -177,7 +197,8 @@ namespace NUHRandomizer
             {
                 if (lowCount < 84)
                 {
-                    ars = testLowSequence[lowCount];
+                    patient.TrialId = "HALT-1" + (lowCount + 1).ToString("000");
+                    ars = lowSequence[lowCount];
                     if (ars.Equals("Continue"))
                     {
                         patient.ResearchArmsId = 3;
@@ -208,25 +229,29 @@ namespace NUHRandomizer
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Continue";
+                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Continue"
+                            + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else if (id == 2)
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Halt";
+                            "<br/>qHBsAg : High(≥10IU/ml)<br/>Treatment Arm : Halt"
+                            + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else if (id == 3)
                     {
                         Label1.Text = "Subject Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                              "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Continue";
+                              "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Continue"
+                              + "<br/>Date and Time: " + patient.RecruitDate; ;
                     }
                     else
                     {
-                        Label1.Text = "Subject Number : " + patient.TrialId +
+                        Label1.Text = "Trial Number : " + patient.TrialId +
                             "<br/>Hospital: " + ddlHospital.SelectedItem +
-                           "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Halt";
+                           "<br/>qHBsAg : Low(<10IU/ml)<br/>Treatment Arm : Halt"
+                           + "<br/>Date and Time: " + patient.RecruitDate;
                     }
                     ddlHospital.SelectedIndex = 0;
                     ddlQhbsag.SelectedIndex = 0;

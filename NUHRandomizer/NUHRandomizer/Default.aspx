@@ -43,8 +43,8 @@
                 <div class="box-body">
                     <table>
                         <tr class="space" style="background-color: #001f3f">
-                            <td class="header">
-                                <font color="white">Institution</font>
+                            <td class="header" style="width: 100px">
+                                <font color="white">Hospital</font>
                             </td>
                             <td class="count header" style="width: 150px">
                                 <font color="white">Patient Randomized</font>

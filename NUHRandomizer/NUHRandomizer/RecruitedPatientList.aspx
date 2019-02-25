@@ -27,12 +27,12 @@
                             <HeaderStyle BackColor="#001f3f" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" />
                             <AlternatingRowStyle BackColor="#F8F8F8" />
        <Columns>
-        <asp:TemplateField HeaderText="Subject Number">
+        <asp:TemplateField HeaderText="Trial Number">
             <ItemTemplate>
                 <asp:Label ID="lblTrialId" runat="server" Text='<%# Eval("TrialId") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-           <asp:TemplateField HeaderText="Institution">
+           <asp:TemplateField HeaderText="Hospital">
             <ItemTemplate>
                 <asp:Label ID="lblHospital" runat="server" Text='<%# Eval("Hospital.HospitalShortName") %>' Width="100px" style="text-align: center"></asp:Label>
             </ItemTemplate>
@@ -47,7 +47,7 @@
                 <asp:Label ID="lblARS" runat="server" Text='<%# Eval("ResearchArm.ARS") %>' Width="100px" style="text-align: center"></asp:Label>
             </ItemTemplate>
         </asp:TemplateField>
-        <asp:TemplateField HeaderText="Randomized Date">
+        <asp:TemplateField HeaderText="Date and Time">
             <ItemTemplate>
                 <asp:Label ID="lblDate" runat="server" Text='<%# Eval("RecruitDate") %>' Width="150px" style="text-align: center"></asp:Label>
             </ItemTemplate>

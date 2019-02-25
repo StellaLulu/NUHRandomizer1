@@ -83,7 +83,7 @@
     <asp:GridView ID="gdvPatient" ShowFooter="True" CellPadding="4" GridLines="None" DataKeyNames="Id"
         AutoGenerateColumns="False" runat="server" CellSpacing="4" HorizontalAlign="Center">
         <Columns>
-            <asp:BoundField ItemStyle-Width="150px" DataField="TrialId" HeaderText="Trial ID">
+            <asp:BoundField ItemStyle-Width="150px" DataField="TrialId" HeaderText="Trial Number">
                 <ItemStyle Width="150px"></ItemStyle>
             </asp:BoundField>
             <asp:TemplateField HeaderText="qHBsAg">

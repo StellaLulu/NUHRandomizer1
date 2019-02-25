@@ -38,14 +38,8 @@
         <tr style="height: 50px">
             <td>HALT Study Assistant:</td>
             <td>Zora KHINE</td>
-            <td>Tel: 67726121</td>
+            <td>Tel: 6772 6121</td>
             <td><a href="mailto:htet_htw_KHINE@nuhs.edu.sg">htet_htw_KHINE@nuhs.edu.sg</a></td>
         </tr>
-        <tr style="height: 50px">
-            <td>Website Administrator: </td>
-            <td>YueLiang ZHANG</td>
-            <td>Tel: 81175892</td>
-            <td><a href="mailto:yueliangzhang@ymail.com">yueliangzhang@ymail.com</a></td>
-        </tr>
-    </table>
+        </table>
 </asp:Content>
